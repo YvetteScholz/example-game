@@ -1,0 +1,20 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-3">
+    <nav id="main-navigation">
+      <a routerLink="/overview-categories">Übersichtsseite Kategorien</a>
+    </nav>
+    </div>
+
+    <div class="col-9">
+      <router-outlet></router-outlet>
+      <!--
+        "Inhalte" der Komponente werden über das router-outlet in die Anwendung gerendert.
+        <router-outlet> wird ersetzt durch den Inhalt der aktiven Komponente.
+       -->
+    </div>
+
+  </div>
+
+</div>
