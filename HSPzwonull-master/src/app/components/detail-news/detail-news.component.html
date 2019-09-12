@@ -1,0 +1,80 @@
+<html>
+<div class="center">
+  <h3>News</h3>
+</div>
+<p></p>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="Download.jpg" width="50" height="50" >
+    </a>
+    <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/home">Home<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/news">Newsbeiträge<span
+            class="sr-only">
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/detail-topkurse/:id">Topkurse<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/src/app/components/overview-categories/overview-categories">Kurskategorien<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/overview-week/:id">Wochenübersicht<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav></header>
+<br>
+<body>
+<p>&nbsp;</p>
+<p style=“line-height:200;%“><h6>Hier findest du die aktuellen News:</h6>
+<p>&nbsp;</p>
+<div *ngIf="news.length == 0">
+  Keine neuen Nachrichten vorhanden.
+</div>
+<div *ngIf="news.length > 0">
+  <div *ngFor="let newsentry of news">
+    {{ newsentry.title}}
+    <p></p>
+   ID: {{newsentry.nid}}
+    <p></p>
+   Datum: {{newsentry.changed}}
+    <p></p>
+    {{newsentry.field_kurztitel}}
+    <p></p>
+    {{newsentry.field_teasertext}}
+    <p></p>
+  </div>
+</div>
+</body>
+<footer>
+  <div class="base">
+    <h6>Hochschulsport von der Universität zu Köln </h6>
+  </div>
+</footer>
+</html>

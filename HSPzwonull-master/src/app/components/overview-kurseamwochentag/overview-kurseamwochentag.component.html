@@ -1,0 +1,66 @@
+<html>
+<div class="center">
+  <h3>Kurs nach Wochentage</h3>
+</div>
+<p></p>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="../Images/Hochschulsport.png" width="50" height="50" >
+    </a>
+    <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="#">Home<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/detail-news/:id">News<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/detail-topkurse/:id">Topkurse<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/overview-categories">Kurskategorien<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/overview-week/:id">Wochenübersicht<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
+  </nav></header>
+<body>
+<div *ngIf="courses.length > 0">
+  <p style=“line-height:200;%“>
+  <p></p>
+
+  <div *ngFor="let course of courses ">
+    {{course.field_kursverknuepfung}}
+
+    <a routerLink="/detail-kurs/{{ course.nid }}" style="color: white ">: Zum Kurs</a>
+    <p [innerHTML]="course.body"></p>
+</div>
+</div>
+</body>
+</html>

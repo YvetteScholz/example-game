@@ -1,0 +1,35 @@
+h3{
+  color: white;
+}
+
+.center {
+  background-color: orange;
+  padding: 25px;
+  text-align: center;
+  width: 100%;
+}
+h6{
+  text-align: center;
+}
+
+body ul {
+  width: 218px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+li { display: block } // ab IE8
+a{ text-decoration: none; color: white; }
+.base {
+  background-color: orange;
+  padding: 5px 0;
+  text-align: center;
+  width: 100%;
+}
+h6{
+  color: white;
+}
+body{
+  background-color: indianred;
+}
+
