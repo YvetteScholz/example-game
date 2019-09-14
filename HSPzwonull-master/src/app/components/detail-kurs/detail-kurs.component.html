@@ -1,0 +1,76 @@
+<html>
+<div class="center">
+  <h3>Detailseite</h3>
+</div>
+<p></p>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/Images/Hochschulsport.png/" height="90px" weigth="90px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="#">Home<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/detail-news/:id">News<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/detail-topkurse/:id">Topkurse<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/overview-categories">Kurskategorien<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/overview-week/:id">Wochenübersicht<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<p></p>
+<body>
+<h1>{{ coursesData[0].title }}</h1>
+<p [innerHTML]="coursesData[0].body"></p>
+
+<h2>Termine</h2>
+<div *ngFor="let courseDate of coursesData" style="margin-bottom: 25px;">
+  Schwierigkeitslevel: {{ courseDate.field_schwierigkeitslevel}}
+
+  <br>
+  Zeitraum: {{ courseDate.field_uhrzeit_beginn }} - {{ courseDate.field_uhrzeit_ende }}
+  <br>
+  Ort: {{courseDate.field_ort}}
+  <br>
+  Wochentag: {{courseDate.field_wochentag}}
+  <br>
+  Anmeldung: {{courseDate.field_onlineanmeldung}}
+</div>
+<button>Anmelden</button>
+<br>
+</body>
+<br>
+<footer>
+  <div class="base">
+    <h6>Hochschulsport von der Universität zu Köln </h6>
+  </div>
+</footer>
+</html>

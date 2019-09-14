@@ -1,0 +1,68 @@
+<html>
+<div class="center">
+  <h3>Topkurse</h3>
+</div>
+<p></p>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="/assets/Images/Hochschulsport.png/" height="90px" weigth="90px">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggler="collapse" data-target="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="#">Home<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/detail-news/:id">News<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/detail-topkurse/:id">Topkurse<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/overview-categories">Kurskategorien<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+        <li class="navbar-item active">
+          <a class="nav-link"
+             href="/overview-week/:id">Wochenübersicht<span
+            class="sr-only">(current)
+        </span></a>
+        </li>
+      </ul>
+    </div>
+  </nav></header>
+<p>&nbsp;</p>
+<body>
+<div *ngIf="topcourses.length > 0">
+  <p style=“line-height:200;%“><h4>Topkurse:</h4>
+  <p>&nbsp;</p>
+  <div *ngFor="let course of topcourses">
+    <p style=“line-height:200;%“>
+    <h6>{{ course.title }}</h6>
+    ID: {{ course.nid }}
+    <a routerLink="/detail-kurs/{{ course.nid }}" style="color: white">Link zum Topkurs</a>
+    <p [innerHTML]="course.body"></p>
+  </div>
+</div>
+</body>
+<footer>
+  <div class="base">
+    <h6>Hochschulsport von der Universität zu Köln </h6>
+  </div>
+</footer>
+</html>
+
